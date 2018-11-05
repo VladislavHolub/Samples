@@ -1,0 +1,64 @@
+<meta charset  ="  utf-8"  >
+<script type="text/javascript">
+
+	function isValid(number) 
+	{if (number > 0 && number <= 20) {return true}
+	else {return false}}
+
+	function getValidNumber (player) 
+	{
+		while (true)
+		{ var user_ans = prompt('игрок'+player+'введите целое число ')
+		if (!isValid (user_ans)) {alert('нухно ввести от 1 до 20')}
+		else {return user_ans} 
+		}
+	}		
+
+
+	function CloseValue (answer, win_ticket) 
+	{if (answer == win_ticket + 1 || answer == win_ticket - 1) 
+		{return true}}	
+
+	function RandomInt (min,max)
+	{return Math.floor(Math.random() * (max - min + 1) + min)}
+
+	function playerChange (player)
+	{if (player == 1) {return 2}
+	else {return 1}
+	}
+
+	function tryCountChange (player)
+	{if (player == 1) { return tryCount_1++}
+	else {return tryCount_2++}
+	}
+	var tryCount = 0
+	var tryCount_1 = 0
+	var tryCount_2 = 0
+	var win_ticket = RandomInt (1,20);
+	var player = 1
+
+	alert ('угадай число от 1 до 20')
+
+ 	while (true) {
+
+	tryCount = tryCountChange (player)
+
+	var user_ans = getValidNumber(player)
+	
+	
+
+	if (user_ans == win_ticket) { alert ('вы угадали') 
+			break }
+		
+		
+		else if (CloseValue (user_ans, win_ticket)) 
+			{alert ('вы почти угадали')}
+		else {alert ('не угадали.')} 
+
+	player = playerChange(player)		
+				} 	
+	if (player == 1) {alert ('игра окончена. выйграл игрок ' +player+'вы угадали за ' + tryCount_1 +' попыток')}		
+	else 	{alert ('игра окончена. выйграл игрок ' +player+'вы угадали за ' + tryCount_2 +' попыток')}
+	
+ 
+</script>
