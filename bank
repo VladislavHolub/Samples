@@ -1,0 +1,17 @@
+<meta charset  ="  utf-8"  >
+<script type="text/javascript">
+
+var investment = prompt ('введите сумму вклада')
+var percent = prompt ('введите ставку %')
+
+var total = investment
+var period = 0
+
+do
+{ period++
+	total = +total + +(total * percent / 100)
+	alert (total + 'год' + period)
+
+} while (period < 10)
+
+</script>
