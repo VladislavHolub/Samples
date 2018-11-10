@@ -1,0 +1,19 @@
+var temperature=20;
+var itsRaining=false;
+
+var minutes;
+
+if (temperature >= 0 && temperature <= 35 && !itsRaining) {
+if (temperature == 20 ) {
+minutes = 20;
+}
+if (temperature > 20 ) {
+minutes = (20 - (temperature - 20));
+}
+if (temperature < 20 ) {
+minutes = (20 - (20 - temperature));
+}
+}
+else {
+minutes = 0;
+}
